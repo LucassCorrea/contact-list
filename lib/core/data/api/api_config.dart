@@ -1,13 +1,14 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class ApiConfig {
   static Dio apiContact = Dio(
     BaseOptions(
-      baseUrl: "https://parseapi.back4app.com/classes/Contact",
+      baseUrl: dotenv.env['BASE_URL_1']!,
       contentType: "application/json",
       headers: {
-        "X-Parse-Application-Id": "R1inqzkmiVLyiwrP6gnAV71W9QaC7ohuTmuy57JU",
-        "X-Parse-REST-API-Key": "ugE8yq9KveQLZK2z1VHsLfAL8QWFXfAFCgtkijzU",
+        "X-Parse-Application-Id": dotenv.env['APP_ID']!,
+        "X-Parse-REST-API-Key": dotenv.env['REST_KEY'],
       },
     ),
   );
@@ -16,8 +17,8 @@ class ApiConfig {
     BaseOptions(
       contentType: "application/json",
       headers: {
-        "X-Parse-Application-Id": "R1inqzkmiVLyiwrP6gnAV71W9QaC7ohuTmuy57JU",
-        "X-Parse-REST-API-Key": "ugE8yq9KveQLZK2z1VHsLfAL8QWFXfAFCgtkijzU",
+        "X-Parse-Application-Id": dotenv.env['APP_ID']!,
+        "X-Parse-REST-API-Key": dotenv.env['REST_KEY'],
         "X-Parse-Revocable-Session": 1,
       },
     ),

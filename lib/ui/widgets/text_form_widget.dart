@@ -19,7 +19,7 @@ class TextFormWidget extends StatefulWidget {
 }
 
 class _TextFormWidgetState extends State<TextFormWidget> {
-  var obscureText = false;
+  var obscureText = true;
 
   @override
   Widget build(BuildContext context) {
