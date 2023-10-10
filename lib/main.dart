@@ -1,3 +1,6 @@
+import 'package:contact_list/core/theme/theme.dart';
+import 'package:contact_list/core/routes/routes.dart';
+import 'package:contact_list/ui/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,12 +12,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp(
+      theme: AppTheme.themeLight,
+      debugShowCheckedModeBanner: false,
+      routes: {
+        Routes.homepage: (context) => const LoginPage(),
+      },
     );
   }
 }
