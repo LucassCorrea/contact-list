@@ -1,6 +1,7 @@
 import 'package:contact_list/core/theme/theme.dart';
 import 'package:contact_list/core/routes/routes.dart';
 import 'package:contact_list/ui/pages/login_page.dart';
+import 'package:contact_list/ui/pages/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
@@ -20,6 +21,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         Routes.homepage: (context) => const LoginPage(),
+        Routes.register: (context) => const RegisterPage(),
       },
     );
   }

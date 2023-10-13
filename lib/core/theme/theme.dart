@@ -59,11 +59,39 @@ class AppTheme {
       ),
     ),
     textTheme: const TextTheme(
+      bodyMedium: TextStyle(
+        color: Colors.black,
+        fontSize: 14,
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w500,
+        overflow: TextOverflow.ellipsis,
+      ),
+      displayMedium: TextStyle(
+        color: Colors.black,
+        fontSize: 14,
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w500,
+        overflow: TextOverflow.ellipsis,
+      ),
+      displayLarge: TextStyle(
+        color: Colors.black,
+        fontSize: 14,
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w500,
+        overflow: TextOverflow.ellipsis,
+      ),
       labelLarge: TextStyle(
         color: Colors.black,
         fontSize: 16,
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.w600,
+        overflow: TextOverflow.ellipsis,
+      ),
+      titleLarge: TextStyle(
+        color: Colors.black,
+        fontSize: 16,
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w500,
         overflow: TextOverflow.ellipsis,
       ),
       titleMedium: TextStyle(
