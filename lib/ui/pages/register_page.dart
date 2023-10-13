@@ -32,7 +32,6 @@ class _RegisterPageState extends State<RegisterPage> {
         child: Form(
           key: _formKey,
           child: CustomColumn(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const Text(
                 "Cadastro",

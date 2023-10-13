@@ -11,7 +11,7 @@ class CustomColumn extends StatelessWidget {
     required this.children,
     this.padding = const EdgeInsets.fromLTRB(20, 15, 20, 20),
     this.mainAxisAlignment = MainAxisAlignment.start,
-    this.crossAxisAlignment = CrossAxisAlignment.center,
+    this.crossAxisAlignment = CrossAxisAlignment.stretch,
   });
 
   @override

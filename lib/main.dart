@@ -1,5 +1,6 @@
 import 'package:contact_list/core/theme/theme.dart';
 import 'package:contact_list/core/routes/routes.dart';
+import 'package:contact_list/ui/pages/forgot_page.dart';
 import 'package:contact_list/ui/pages/login_page.dart';
 import 'package:contact_list/ui/pages/register_page.dart';
 import 'package:flutter/material.dart';
@@ -17,11 +18,13 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: const Locale("pt", "BR"),
       theme: AppTheme.themeLight,
       debugShowCheckedModeBanner: false,
       routes: {
-        Routes.homepage: (context) => const LoginPage(),
+        Routes.login: (context) => const LoginPage(),
         Routes.register: (context) => const RegisterPage(),
+        Routes.forgot: (context) => const ForgotPage(),
       },
     );
   }

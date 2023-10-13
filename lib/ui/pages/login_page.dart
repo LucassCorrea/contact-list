@@ -33,7 +33,6 @@ class _LoginPageState extends State<LoginPage> {
           child: LayoutBuilder(
             builder: (context, constraints) {
               return CustomColumn(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const Text(
                     "Olá,",
@@ -63,7 +62,9 @@ class _LoginPageState extends State<LoginPage> {
                         Container(
                           alignment: Alignment.centerRight,
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, Routes.forgot);
+                            },
                             child: const Text(
                               "Esqueceu a senha?",
                               style: TextStyle(
@@ -71,7 +72,6 @@ class _LoginPageState extends State<LoginPage> {
                                 fontWeight: FontWeight.w500,
                                 fontSize: 14,
                               ),
-                              textAlign: TextAlign.end,
                             ),
                           ),
                         ),
@@ -84,12 +84,13 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   const SizedBox(height: 10),
                   ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async {
                       Navigator.pushNamed(context, Routes.register);
                     },
                     style: ElevatedButton.styleFrom(
                       shadowColor: Colors.transparent,
                       backgroundColor: Colors.transparent,
+                      surfaceTintColor: Colors.transparent,
                       foregroundColor: Colors.black54,
                     ),
                     child: const Text("Criar Conta"),

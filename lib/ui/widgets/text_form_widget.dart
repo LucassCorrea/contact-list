@@ -5,6 +5,7 @@ class TextFormWidget extends StatefulWidget {
   final TextEditingController controller;
   final bool visibility;
   final String? Function(String?)? validator;
+  final bool autofocus;
 
   const TextFormWidget({
     super.key,
@@ -12,6 +13,7 @@ class TextFormWidget extends StatefulWidget {
     required this.controller,
     this.validator,
     this.visibility = false,
+    this.autofocus = false,
   });
 
   @override
@@ -19,7 +21,7 @@ class TextFormWidget extends StatefulWidget {
 }
 
 class _TextFormWidgetState extends State<TextFormWidget> {
-  var obscureText = true;
+  var obscureText = false;
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +43,7 @@ class _TextFormWidgetState extends State<TextFormWidget> {
           cursorColor: const Color(0xff5d9dff),
           obscureText: obscureText,
           validator: widget.validator,
+          autofocus: widget.autofocus,
           style: const TextStyle(
             color: Colors.black,
             fontSize: 14,

@@ -10,11 +10,11 @@ class AppTheme {
       secondary: Colors.black,
       onSecondary: Colors.white,
       error: Colors.red,
-      onError: Colors.white,
+      onError: Colors.black,
       background: Colors.white,
       onBackground: Colors.black,
-      surface: Colors.black,
-      onSurface: Colors.white,
+      surface: Colors.white,
+      onSurface: Colors.black,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -31,6 +31,10 @@ class AppTheme {
         backgroundColor: Colors.transparent,
         foregroundColor: const Color(0xff767676),
       ),
+    ),
+    appBarTheme: const AppBarTheme(
+      foregroundColor: Colors.black,
+      backgroundColor: Colors.transparent,
     ),
     inputDecorationTheme: const InputDecorationTheme(
       activeIndicatorBorder: BorderSide(
