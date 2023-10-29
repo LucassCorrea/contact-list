@@ -1,6 +1,7 @@
 import 'package:contact_list/core/theme/theme.dart';
 import 'package:contact_list/core/routes/routes.dart';
 import 'package:contact_list/ui/pages/forgot_page.dart';
+import 'package:contact_list/ui/pages/home_page.dart';
 import 'package:contact_list/ui/pages/login_page.dart';
 import 'package:contact_list/ui/pages/register_page.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,7 @@ class MainApp extends StatelessWidget {
         Routes.login: (context) => const LoginPage(),
         Routes.register: (context) => const RegisterPage(),
         Routes.forgot: (context) => const ForgotPage(),
+        Routes.home: (context) => const HomePage(),
       },
     );
   }

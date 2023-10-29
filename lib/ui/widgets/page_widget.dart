@@ -29,17 +29,13 @@ class PageWidget extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    isSucess
-                        ? const Icon(
-                            Icons.check_circle_outline_rounded,
-                            color: Colors.green,
-                            size: 60,
-                          )
-                        : const Icon(
-                            Icons.close_rounded,
-                            color: Colors.red,
-                            size: 60,
-                          ),
+                    Icon(
+                      isSucess
+                          ? Icons.check_circle_outline_rounded
+                          : Icons.close_rounded,
+                      color: isSucess ? Colors.green : Colors.red,
+                      size: 60,
+                    ),
                     const SizedBox(height: 5),
                     Text(
                       title,
@@ -63,7 +59,7 @@ class PageWidget extends StatelessWidget {
               ElevatedButton(
                 onPressed: onPressed,
                 child: Text(label),
-              )
+              ),
             ],
           ),
         ),

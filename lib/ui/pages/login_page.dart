@@ -79,7 +79,9 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, Routes.home);
+                    },
                     child: const Text("Login"),
                   ),
                   const SizedBox(height: 10),
