@@ -4,7 +4,7 @@ class TextFormWidget extends StatefulWidget {
   final String title;
   final TextEditingController controller;
   final bool visibility;
-  final String? Function(String?)? validator;
+  final String? Function(String? value)? validator;
   final bool autofocus;
 
   const TextFormWidget({

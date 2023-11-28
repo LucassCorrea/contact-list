@@ -1,3 +1,5 @@
+import 'package:contact_list/core/data/repository/user_repository.dart';
+import 'package:contact_list/core/utils/validators/validators.dart';
 import 'package:contact_list/ui/widgets/custom_column_widget.dart';
 import 'package:contact_list/ui/widgets/text_form_widget.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +14,7 @@ class ForgotPage extends StatefulWidget {
 class _ForgotPageState extends State<ForgotPage> {
   final _formKey = GlobalKey<FormState>();
   final email = TextEditingController();
+  final userReposity = UserRepository();
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +45,7 @@ class _ForgotPageState extends State<ForgotPage> {
                     const SizedBox(height: 20),
                     TextFormWidget(
                       title: "E-mail",
+                      validator: (value) => Validators.email(value),
                       controller: email,
                       autofocus: true,
                     ),
@@ -49,7 +53,11 @@ class _ForgotPageState extends State<ForgotPage> {
                 ),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  if (_formKey.currentState!.validate()) {
+                    await userReposity.passwordReset(email.text);
+                  }
+                },
                 child: const Text("Confirmar"),
               ),
             ],

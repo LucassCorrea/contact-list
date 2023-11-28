@@ -1,3 +1,6 @@
+import 'package:contact_list/core/data/model/user_model.dart';
+import 'package:contact_list/core/data/repository/user_repository.dart';
+import 'package:contact_list/core/utils/validators/validators.dart';
 import 'package:contact_list/ui/widgets/custom_column_widget.dart';
 import 'package:contact_list/ui/widgets/text_form_widget.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +18,7 @@ class _RegisterPageState extends State<RegisterPage> {
   var email = TextEditingController();
   var password = TextEditingController();
   var passwordConfirm = TextEditingController();
+  var userRepository = UserRepository();
 
   @override
   void dispose() {
@@ -44,29 +48,44 @@ class _RegisterPageState extends State<RegisterPage> {
                     TextFormWidget(
                       title: "Nome de Usuário",
                       controller: username,
+                      validator: (value) => Validators.usernName(value),
                     ),
                     const SizedBox(height: 15),
                     TextFormWidget(
                       title: "E-mail",
                       controller: email,
+                      validator: (value) => Validators.email(value),
                     ),
                     const SizedBox(height: 15),
                     TextFormWidget(
                       title: "Senha de acesso",
                       controller: password,
+                      validator: (value) => Validators.password(value),
                       visibility: true,
                     ),
                     const SizedBox(height: 15),
                     TextFormWidget(
                       title: "Confirmar senha",
                       controller: passwordConfirm,
+                      validator: (value) =>
+                          Validators.confirmPassword(value, password.text),
                       visibility: true,
                     ),
                   ],
                 ),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  if (_formKey.currentState!.validate()) {
+                    await userRepository.signIn(
+                      UserModel(
+                        email: email.text,
+                        password: password.text,
+                        username: username.text,
+                      ),
+                    );
+                  }
+                },
                 child: const Text("Cadastrar"),
               ),
             ],
